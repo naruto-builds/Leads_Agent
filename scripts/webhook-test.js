@@ -12,7 +12,7 @@ const headers = {
 };
 
 async function post(path, body) {
-  const res = await fetch(`http://localhost:3000${path}`, {
+  const res = await fetch(`${process.env.BASE_URL ?? 'http://localhost:3000'}${path}`, {
     method: 'POST',
     headers,
     body: JSON.stringify(body),
