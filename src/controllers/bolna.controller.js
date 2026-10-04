@@ -4,6 +4,13 @@ import * as eventModel from '../models/webhookEvent.model.js';
 import { isTerminal, shouldAdvance } from '../utils/callStatus.js';
 import { normalizePhone } from '../utils/phone.js';
 
+// Bolna's payload echoes our tool config, headers included, so drop it before storing.
+function sanitizeRaw(body) {
+  const copy = structuredClone(body);
+  if (copy.usage_breakdown) delete copy.usage_breakdown.api_tools;
+  return copy;
+}
+
 // Post-call webhook: Bolna sends one request per status change.
 export async function postCallWebhook(req, res) {
   const body = req.body ?? {};
@@ -33,7 +40,7 @@ export async function postCallWebhook(req, res) {
     fields.duration_s = body.conversation_duration ?? null;
     fields.transcript = body.transcript ?? null;
     fields.summary = body.summary ?? null;
-    fields.raw = body;
+    fields.raw = sanitizeRaw(body);
   }
 
   if (Object.keys(fields).length > 0) {
