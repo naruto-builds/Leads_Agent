@@ -22,3 +22,13 @@ export function requireWebhookSecret(req, res, next) {
   }
   next();
 }
+
+// The pre-call webhook cannot send custom headers, so for that one route the secret
+// may also arrive as ?secret=...
+export function requireToolSecret(req, res, next) {
+  const provided = req.get('x-webhook-secret') ?? req.query.secret;
+  if (!matches(provided, env.WEBHOOK_SECRET)) {
+    return res.status(401).json({ error: 'unauthorized' });
+  }
+  next();
+}
