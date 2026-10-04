@@ -1,0 +1,29 @@
+{
+  "name": "leads_agent",
+  "version": "1.0.0",
+  "description": "Leads Agent",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naruto-builds/Leads_Agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naruto-builds/Leads_Agent/issues"
+  },
+  "homepage": "https://github.com/naruto-builds/Leads_Agent#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "node-cron": "^4.6.0"
+  }
+}
