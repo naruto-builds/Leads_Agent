@@ -32,3 +32,10 @@ export async function updateByExecutionId(executionId, fields) {
   if (error) throwDbError('update call', error);
   return data;
 }
+
+export async function saveAnalysis(executionId, analysis) {
+  return updateByExecutionId(executionId, {
+    analysis,
+    classified_at: new Date().toISOString(),
+  });
+}

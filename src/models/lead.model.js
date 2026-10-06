@@ -35,3 +35,14 @@ export async function updateById(id, fields) {
   if (error) throwDbError('update lead', error);
   return data;
 }
+
+
+export async function findById(id) {
+  const { data, error } = await supabase
+    .from('leads')
+    .select('*')
+    .eq('id', id)
+    .maybeSingle();
+  if (error) throwDbError('find lead by id', error);
+  return data;
+}

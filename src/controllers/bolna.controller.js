@@ -4,6 +4,7 @@ import * as eventModel from '../models/webhookEvent.model.js';
 import { isTerminal, shouldAdvance } from '../utils/callStatus.js';
 import { normalizePhone } from '../utils/phone.js';
 import { env } from '../config/env.js';
+import { classifyCall } from '../services/classification.service.js';
 
 // Bolna's payload echoes our tool config, headers included, so drop it before storing.
 function sanitizeRaw(body) {
@@ -46,6 +47,13 @@ export async function postCallWebhook(req, res) {
 
   if (Object.keys(fields).length > 0) {
     await callModel.updateByExecutionId(executionId, fields);
+  }
+
+  if (status === 'completed') {
+    // Not awaited: the LLM takes seconds and Bolna is waiting for our reply.
+    classifyCall(executionId).catch((err) =>
+      console.error('classification error:', err.message)
+    );
   }
   res.json({ ok: true });
 }

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "real-01",
+    "file": "eval/real-01.txt",
+    "expect": { "temperature": "hot", "product_count": 50, "budget_null": true, "name_null": true, "barrier_null": true, "low_confidence": ["business"] }
+  },
+  {
+    "id": "syn-02-hot-with-budget",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes, go ahead.\nassistant: Great! May I know your name, please?\nuser: Ravi.\nassistant: Nice to meet you, Ravi! What kind of products do you sell?\nuser: I sell sarees, mostly Kanchipuram silk.\nassistant: Lovely. About how many products would you list?\nuser: Around 80.\nassistant: Which features do you need, like online payments or delivery tracking?\nuser: Online payments and tracking, and discount codes.\nassistant: Noted. When would you like to go live?\nuser: As soon as possible. How soon can you start? And what is the price?\nassistant: One moment. The price depends on your products and features, and our team will share a clear quote on WhatsApp. Do you have a budget in mind?\nuser: Around one lakh.\nassistant: Thank you, Ravi. To confirm: Kanchipuram sarees, about 80 products, payments, tracking and discount codes, going live soon, budget around one lakh. Did I get that right?\nuser: Yes, that is right. Let us start.",
+    "expect": { "temperature": "hot", "product_count": 80, "budget_null": false }
+  },
+  {
+    "id": "syn-03-hot-hindi",
+    "transcript": "assistant: नमस्ते, मैं अर्चना हूँ, एक एआई असिस्टेंट। क्या अभी एक मिनट बात करने का सही समय है?\nuser: हाँ, बोलिए।\nassistant: बहुत अच्छा! आपका नाम क्या है?\nuser: मेरा नाम सुनील है।\nassistant: सुनील जी, आप क्या बेचते हैं?\nuser: मैं कपड़े बेचता हूँ, लगभग दो सौ प्रोडक्ट हैं।\nassistant: ठीक है, दो सौ प्रोडक्ट। आपको कौन से फीचर चाहिए?\nuser: ऑनलाइन पेमेंट और WhatsApp पर ऑर्डर।\nassistant: समझ गई। आप वेबसाइट कब तक शुरू करना चाहेंगे?\nuser: बहुत जल्दी, इसी महीने। आप कितने दिन में शुरू कर सकते हैं और रेट क्या होगा?\nassistant: एक मिनट। कीमत आपके प्रोडक्ट और फीचर पर निर्भर करती है, हमारी टीम WhatsApp पर कोटेशन भेजेगी।\nuser: ठीक है, मुझे शुरू करना है।",
+    "expect": { "temperature": "hot", "product_count": 200 }
+  },
+  {
+    "id": "syn-04-hot-telugu",
+    "transcript": "assistant: నమస్కారం, నేను అర్చన, ఒక AI అసిస్టెంట్. ఇప్పుడు ఒక నిమిషం మాట్లాడటానికి వీలవుతుందా?\nuser: అవును, చెప్పండి.\nassistant: చాలా బాగుంది! మీ పేరు ఏమిటి?\nuser: నా పేరు శ్రీనివాస్.\nassistant: శ్రీనివాస్ గారు, మీరు ఏమి అమ్ముతారు?\nuser: నేను హోమ్ డెకర్ వస్తువులు అమ్ముతాను, సుమారు వంద ప్రొడక్ట్స్ ఉన్నాయి.\nassistant: సరే, వంద ప్రొడక్ట్స్. మీకు ఏ ఫీచర్లు కావాలి?\nuser: ఆన్‌లైన్ పేమెంట్ మరియు డెలివరీ ట్రాకింగ్.\nassistant: అర్థమైంది. వెబ్‌సైట్ ఎప్పటికి లైవ్ కావాలి?\nuser: వీలైనంత త్వరగా. మీరు ఎప్పుడు మొదలు పెట్టగలరు? రేటు ఎంత అవుతుంది?\nassistant: ఒక్క నిమిషం. ధర మీ ప్రొడక్ట్స్ మరియు ఫీచర్లపై ఆధారపడి ఉంటుంది, మా టీమ్ WhatsApp లో కోట్ పంపుతుంది.\nuser: సరే, నేను మొదలు పెట్టాలనుకుంటున్నాను.",
+    "expect": { "temperature": "hot", "product_count": 100 }
+  },
+  {
+    "id": "syn-05-hot-quote-today",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes, tell me quickly, I am in a meeting soon.\nassistant: Of course. What do you sell?\nuser: Electronics accessories, phone covers and chargers.\nassistant: How many products?\nuser: About 300.\nassistant: Which features do you need?\nuser: Payments, inventory, and COD.\nassistant: When would you like to go live?\nuser: Next month. Yes, go ahead, send me the quote today and we can sign this week.",
+    "expect": { "temperature": "hot", "product_count": 300 }
+  },
+  {
+    "id": "syn-06-warm-budget-barrier",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes.\nassistant: Great! May I know your name?\nuser: Meena.\nassistant: Nice to meet you, Meena. What do you sell?\nuser: Handmade candles.\nassistant: How many products?\nuser: Maybe thirty.\nassistant: Which features do you need?\nuser: Just payments for now.\nassistant: When would you like to go live?\nuser: Not sure. Honestly my budget is not much right now. Call me next month.\nassistant: Understood, budget is tight right now. Is there a day next month that works?\nuser: Call me around the tenth.",
+    "expect": { "temperature": "warm", "product_count": 30, "callback": true }
+  },
+  {
+    "id": "syn-07-warm-brother-decides",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes.\nassistant: May I know your name?\nuser: Srinivas.\nassistant: What products do you sell?\nuser: Home decor.\nassistant: How many products?\nuser: A few hundred.\nassistant: Which features do you need?\nuser: My brother handles the money. Call me the day after tomorrow evening.\nassistant: Understood, your brother handles the payments. Would it help to have him on the call?\nuser: Yes, that would be good. Four PM is fine.",
+    "expect": { "temperature": "warm", "callback": true }
+  },
+  {
+    "id": "syn-08-warm-send-details",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes.\nassistant: May I know your name?\nuser: Kiran.\nassistant: What do you sell?\nuser: Some clothes, not sure yet.\nassistant: Would you say around 20 products, 100 or more?\nuser: Maybe a lot.\nassistant: Do you need features like online payments?\nuser: Just send me the details.\nassistant: Sure, I will send the details on WhatsApp. When would you like to go live?\nuser: I will see after reading.",
+    "expect": { "temperature": "warm", "product_count": null }
+  },
+  {
+    "id": "syn-09-warm-timing-barrier",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes.\nassistant: May I know your name?\nuser: Anita.\nassistant: What do you sell?\nuser: Jewellery.\nassistant: How many products?\nuser: Around fifty.\nassistant: Which features do you need?\nuser: Payments and a gift wrapping option.\nassistant: When would you like to go live?\nuser: Not before Diwali, we are too busy with the festival rush. Maybe after that.",
+    "expect": { "temperature": "warm", "product_count": 50 }
+  },
+  {
+    "id": "syn-10-warm-callback-only",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Hello, I am driving. Call me tomorrow after lunch.\nassistant: Of course, no problem. What time after lunch works for you?\nuser: Around two thirty.",
+    "expect": { "temperature": "warm", "callback": true }
+  },
+  {
+    "id": "syn-11-warm-comparing",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes.\nassistant: May I know your name?\nuser: Vikram.\nassistant: What do you sell?\nuser: Organic spices.\nassistant: How many products?\nuser: Around 40.\nassistant: Which features do you need?\nuser: Payments and subscriptions.\nassistant: When would you like to go live?\nuser: What is the price? I am just comparing a few agencies, will decide in three months.",
+    "expect": { "temperature": "warm", "product_count": 40 }
+  },
+  {
+    "id": "syn-12-cold-curious",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes, a minute.\nassistant: What do you sell?\nuser: I do not sell anything yet. I was just curious how online stores work.\nassistant: Do you have a plan to start one?\nuser: No plans, just reading about it.",
+    "expect": { "temperature": "cold", "budget_null": true }
+  },
+  {
+    "id": "syn-13-cold-optout",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: No, not interested. Please do not call me again.\nassistant: I am sorry to disturb you. I will not call again.",
+    "expect": { "temperature": "cold", "opt_out": true }
+  },
+  {
+    "id": "syn-14-cold-hangup",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Hello?\nassistant: Hi! May I know your name?\nuser: No.\nassistant: That is okay. What kind of products do you sell?\nuser: Nothing.\nassistant: Thank you for your time.",
+    "expect": { "temperature": "cold" }
+  },
+  {
+    "id": "syn-15-cold-wrong-person",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Yes?\nassistant: May I know your name?\nuser: I think you have the wrong number. I do not run a business.\nassistant: Sorry about that. Have a good day!",
+    "expect": { "temperature": "cold" }
+  },
+  {
+    "id": "syn-16-customer-silent",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nassistant: Hello, are you still on the line?\nassistant: The call will now disconnect. Goodbye!",
+    "expect": { "temperature": "cold" }
+  },
+  {
+    "id": "syn-17-hinglish-misheard",
+    "transcript": "assistant: Hello, this is Archana, an AI assistant. Is this a good time to talk for a minute?\nuser: Haan boliye.\nassistant: Aapka naam kya hai?\nuser: Mera naam Rahul hai.\nassistant: Rahul ji, aap kya bechte hain?\nuser: Main series bechta hoon.\nassistant: Kitne products honge?\nuser: Lagbhag sixty.\nassistant: Kaun se features chahiye?\nuser: Payment aur delivery tracking.\nassistant: Website kab tak live karni hai?\nuser: Next month tak. Price kya hoga?",
+    "expect": { "temperature": "hot", "product_count": 60, "low_confidence": ["business"] }
+  }
+]

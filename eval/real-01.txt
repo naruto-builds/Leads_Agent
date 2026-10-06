@@ -1,0 +1,23 @@
+assistant: Hello, this is Archana, an AI assistant from ElevateBox. Is this a good time to talk for a minute?
+user: Hello
+assistant:  Hi! May I know your name, please?
+user: I am sir
+assistant:  Nice to meet you, sir! What kind of products do you sell?
+user: Paris
+assistant:  Paris, got it. How many products do you plan to list on your online store?
+user: Okay 50
+assistant:  50 products, great. Do you need features like online payments, delivery tracking, or WhatsApp orders?
+user: online payment
+assistant:   Online payment, understood. When would you like your website to go live?
+user: Hi
+user: I want to
+user: Start and how much
+assistant: One moment.
+assistant: I see you want to start soon.
+user: I really want to
+assistant:  Great to hear you really want to start! When do you hope to have the website ready?
+user: in one month
+assistant:   One month to go live, got it. Do you have a budget in mind for this project?
+user: Oh, hi
+user: I haven't thought of it. Hello Discussed matters
+assistant:   No worries about the budget. So, you want to sell Paris products, about 50 items, with online payment, and go live in one month. The team will confirm the timeline and share details on WhatsApp. Thank you for your time!

@@ -12,6 +12,8 @@ export const env = {
   WEBHOOK_SECRET: process.env.WEBHOOK_SECRET,
   META_VERIFY_TOKEN: process.env.META_VERIFY_TOKEN,
   META_APP_SECRET: process.env.META_APP_SECRET,
+  GROQ_API_KEY: process.env.GROQ_API_KEY,
+  GROQ_MODEL: process.env.GROQ_MODEL || 'openai/gpt-oss-120b',
 };
 
 export function checkEnv(names) {
