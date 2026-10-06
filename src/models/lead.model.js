@@ -46,3 +46,15 @@ export async function findById(id) {
   if (error) throwDbError('find lead by id', error);
   return data;
 }
+
+export async function touchInbound(id, timestamp = new Date()) {
+  const ts = new Date(timestamp).toISOString();
+  const lead = await findById(id);
+  if (!lead) return null;
+
+  if (lead.last_inbound_at && new Date(lead.last_inbound_at).getTime() >= new Date(ts).getTime()) {
+    return lead;
+  }
+
+  return updateById(id, { last_inbound_at: ts });
+}
