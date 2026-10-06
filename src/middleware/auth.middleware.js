@@ -4,7 +4,7 @@ import { env } from '../config/env.js';
 const digest = (value) =>
   crypto.createHash('sha256').update(String(value ?? '')).digest();
 
-function matches(provided, expected) {
+export function matches(provided, expected) {
   if (!expected) return false; // a missing secret must never authenticate
   return crypto.timingSafeEqual(digest(provided), digest(expected));
 }

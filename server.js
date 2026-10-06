@@ -9,6 +9,8 @@ checkEnv([
   'BOLNA_AGENT_ID',
   'CALL_SECRET',
   'WEBHOOK_SECRET',
+  'META_VERIFY_TOKEN',
+  'META_APP_SECRET',
 ]);
 
 const server = app.listen(env.PORT, () => {
